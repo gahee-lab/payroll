@@ -5,209 +5,216 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>25년 연말정산 유형 CHECK LIST</title>
   <style>
-  :root{
-    --bg:#ffffff;
-    --text:#111111;
-    --muted:#6b7280; 
-    --card:#ffffff;
-    --border:#e5e7eb;
-    --shadow: 0 10px 30px rgba(0,0,0,.08);
+    :root{
+      --bg:#ffffff;
+      --text:#111111;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --border:#e5e7eb;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
 
-    --btn:#111111;
-    --btnHover:#000000;
-    --btnText:#ffffff;
+      --btn:#111111;
+      --btnHover:#000000;
+      --btnText:#ffffff;
 
-    --btnGhostBg:#ffffff;
-    --btnGhostText:#111111;
+      --btnGhostBg:#ffffff;
+      --btnGhostText:#111111;
 
-    --chipBg:#f3f4f6;
-  }
+      --chipBg:#f3f4f6;
+    }
 
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family: ui-sans-serif, system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:24px;
-  }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
 
-  .wrap{width:min(920px, 100%);}
+    .wrap{width:min(920px, 100%);}
 
-  .top{
-    display:flex;
-    gap:12px;
-    align-items:flex-start;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    margin-bottom:14px;
-  }
+    .top{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-bottom:14px;
+    }
 
-  .title{
-    display:flex;
-    gap:10px;
-    align-items:center;
-    font-weight:900;
-    letter-spacing:-.3px;
-    font-size:18px;
-  }
+    .title{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      font-weight:900;
+      letter-spacing:-.3px;
+      font-size:18px;
+    }
 
-  .badge{
-    font-size:12px;
-    color:#111;
-    background:#f3f4f6;
-    border:1px solid var(--border);
-    padding:6px 10px;
-    border-radius:999px;
-    font-weight:900;
-  }
+    .badge{
+      font-size:12px;
+      color:#111;
+      background:#f3f4f6;
+      border:1px solid var(--border);
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+    }
 
-  .card{
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius:16px;
-    padding:18px;
-    box-shadow: var(--shadow);
-  }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
 
-  .q{
-    font-size:22px;
-    font-weight:1000;
-    line-height:1.25;
-    letter-spacing:-.4px;
-    margin:6px 0 12px;
-  }
+    .q{
+      font-size:22px;
+      font-weight:1000;
+      line-height:1.25;
+      letter-spacing:-.4px;
+      margin:6px 0 12px;
+    }
 
-  .sub{
-    color: var(--muted);
-    font-size:13px;
-    line-height:1.5;
-    margin-top:-2px
-  }
+    .sub{
+      color: var(--muted);
+      font-size:13px;
+      line-height:1.5;
+      margin-top:-2px
+    }
 
-  .btns{
-    display:flex;
-    gap:10px;
-    margin-top:14px;
-    flex-wrap:wrap;
-  }
+    .btns{
+      display:flex;
+      gap:10px;
+      margin-top:14px;
+      flex-wrap:wrap;
+    }
 
-  button{
-    border:0;
-    cursor:pointer;
-    padding:12px 14px;
-    border-radius:12px;
-    font-weight:900;
-    transition: transform .06s ease, background .15s ease, opacity .15s ease, border-color .15s ease;
-  }
-  button:active{transform: scale(.98)}
+    button{
+      border:0;
+      cursor:pointer;
+      padding:12px 14px;
+      border-radius:12px;
+      font-weight:900;
+      transition: transform .06s ease, background .15s ease, opacity .15s ease, border-color .15s ease;
+    }
+    button:active{transform: scale(.98)}
 
-  /* 예 = 블랙 */
-  .yes{
-    background: var(--btn);
-    color: var(--btnText);
-  }
-  .yes:hover{background: var(--btnHover);}
+    .yes{
+      background: var(--btn);
+      color: var(--btnText);
+    }
+    .yes:hover{background: var(--btnHover);}
 
-  /* 아니오 = 화이트 */
-  .no{
-    background: var(--btnGhostBg);
-    color: var(--btnGhostText);
-    border:1px solid var(--border);
-  }
-  .no:hover{background:#fafafa}
+    .no{
+      background: var(--btnGhostBg);
+      color: var(--btnGhostText);
+      border:1px solid var(--border);
+    }
+    .no:hover{background:#fafafa}
 
-  /* 상단 이전/처음으로, 다시하기 = 고스트 */
-  .ghost{
-    background: var(--btnGhostBg);
-    color: var(--btnGhostText);
-    border:1px solid var(--border);
-  }
-  .ghost:hover{background:#fafafa}
+    .ghost{
+      background: var(--btnGhostBg);
+      color: var(--btnGhostText);
+      border:1px solid var(--border);
+    }
+    .ghost:hover{background:#fafafa}
 
-  .row{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .row{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
 
-  .crumbs{
-    margin-top:14px;
-    padding-top:12px;
-    border-top:1px solid var(--border);
-    color: var(--muted);
-    font-size:12px;
-    line-height:1.6;
-  }
+    .crumbs{
+      margin-top:14px;
+      padding-top:12px;
+      border-top:1px solid var(--border);
+      color: var(--muted);
+      font-size:12px;
+      line-height:1.6;
+    }
 
-  .pill{
-    display:inline-block;
-    padding:4px 9px;
-    border-radius:999px;
-    border:1px solid var(--border);
-    margin:3px 6px 0 0;
-    background: var(--chipBg);
-    color:#111;
-  }
+    .pill{
+      display:inline-block;
+      padding:4px 9px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      margin:3px 6px 0 0;
+      background: var(--chipBg);
+      color:#111;
+    }
 
-  .resultType{
-    display:inline-flex;
-    gap:10px;
-    align-items:center;
-    font-size:18px;
-    font-weight:1000;
-    margin:2px 0 10px;
-  }
+    .resultType{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-size:18px;
+      font-weight:1000;
+      margin:2px 0 10px;
+    }
 
-  /* 포인트 점 블랙*/
-  .dot{
-    width:10px; height:10px;
-    border-radius:50%;
-    background:#111;
-  }
+    .dot{
+      width:10px; height:10px;
+      border-radius:50%;
+      background:#111;
+    }
 
-  .kv{
-    margin:10px 0 0;
-    display:grid;
-    gap:10px
-  }
-  .kv .item{
-    padding:8px 10px;
-    border-radius:10px;
-    background:#fafafa;
-    border:1px solid var(--border);
-  }
+    .kv{
+      margin:10px 0 0;
+      display:grid;
+      gap:10px
+    }
+    .kv .item{
+      padding:8px 10px;
+      border-radius:10px;
+      background:#fafafa;
+      border:1px solid var(--border);
+    }
 
-  .k{
-    color: #111111;
-    font-size:14px;
-    font-weight:900
-  }
-  .v{
-    margin-top:2px;
-    font-size:14px;
-    line-height:1.0;
-    white-space:pre-wrap;
-    color:#111;
-    font-weight:700;
-  }
+    .k{
+      color:#111;
+      font-size:14px;
+      font-weight:900;
+      margin-bottom:4px;
+    }
+    .v{
+      margin-top:2px;
+      font-size:14px;
+      line-height:1.0;
+      white-space:pre-wrap;
+      color:#111;
+      font-weight:700;
+    }
 
-  .footerRow{
-    margin-top:14px;
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:space-between;
-    color: var(--muted);
-    font-size:12px;
-  }
+    /* ✅ 메일 안내 (결과 하단에 1번만) */
+    .mailBox.once{
+      margin-top:12px;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      border-radius:10px;
+      background:#fff;
+      font-size:14px;
+      line-height:1.5;
+      color:#374151;
+    }
+    .mailBox.once a{
+      color:#111;
+      font-weight:900;
+      text-decoration:underline;
+    }
+    .subject{
+      font-weight:900;
+      letter-spacing:-.2px;
+    }
 
-  a{color:#111; text-decoration:underline}
-  a:hover{opacity:.85}
-</style>
-
+    a{color:#111; text-decoration:underline}
+    a:hover{opacity:.85}
+  </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="top">
@@ -222,166 +229,95 @@
     </div>
 
     <div class="card" id="card"></div>
-
   </div>
 
 <script>
-/**
- * - type: "q" 질문 노드
- * - type: "r" 결과 노드
- * - yes/no: 다음 노드 id
- */
 const tree = {
-  // Q1
-  q1: {
-    type: "q",
-    text: "25년 중도 입사자 인가요?",
-    yes: "q2_prevCompany2025",
-    no:  "q2_applyNow_direct"
-  },
+  q1: { type:"q", text:"25년 중도 입사자 인가요?", yes:"q2_prevCompany2025", no:"q2_applyNow_direct" },
 
-  // (중도입사자) Q2
-  q2_prevCompany2025: {
-    type: "q",
-    text: "25년에 근무한 이전(종전) 회사가 있나요?",
-    yes: "q3_prevApplied",
-    no:  "q3_applyNow_mid"
-  },
+  q2_prevCompany2025: { type:"q", text:"25년에 근무한 이전(종전) 회사가 있나요?", yes:"q3_prevApplied", no:"q3_applyNow_mid" },
 
-  // (중도입사자 & 이전회사 있음) Q3
-  q3_prevApplied: {
-    type: "q",
-    text: "이전 회사에서 중소기업 청년 소득세 감면을 신청하셨나요?",
-    yes: "r_AplusB",
-    no:  "q4_applyNow_afterPrevNo"
-  },
+  q3_prevApplied: { type:"q", text:"이전 회사에서 중소기업 청년 소득세 감면을 신청하셨나요?", yes:"r_AplusB", no:"q4_applyNow_afterPrevNo" },
 
-  // (중도입사자 & 이전회사 있었지만 이전회사에서 신청X) Q4
-  q4_applyNow_afterPrevNo: {
-    type: "q",
-    text: "중소기업 청년 소득세 감면을 신청하실 건가요?",
-    yes: "r_AplusB2",
-    no:  "r_A"
-  },
+  q4_applyNow_afterPrevNo: { type:"q", text:"중소기업 청년 소득세 감면을 신청하실 건가요?", yes:"r_AplusB2", no:"r_A" },
 
-  // (중도입사자 & 이전회사 없음) Q3
-  q3_applyNow_mid: {
-    type: "q",
-    text: "중소기업 청년 소득세 감면을 신청하실 건가요?",
-    yes: "r_B",
-    no:  "r_A"
-  },
+  q3_applyNow_mid: { type:"q", text:"중소기업 청년 소득세 감면을 신청하실 건가요?", yes:"r_B", no:"r_A" },
 
-  // (중도입사자 아님) Q2
-  q2_applyNow_direct: {
-    type: "q",
-    text: "중소기업 청년 소득세 감면을 신청하실 건가요?",
-    yes: "q5_hasHistory",
-    no:  "r_C"
-  },
+  q2_applyNow_direct: { type:"q", text:"중소기업 청년 소득세 감면을 신청하실 건가요?", yes:"q5_hasHistory", no:"r_C" },
 
-  // (신청한다) Q3
-  q5_hasHistory: {
-    type: "q",
-    text: "이전에 신청한 이력이 있나요?",
-    yes: "r_C",
-    no:  "r_B"
-  },
+  q5_hasHistory: { type:"q", text:"이전에 신청한 이력이 있나요?", yes:"r_C", no:"r_B" },
 
-  // ---------------------------
-  // 결과 노드들 (제출일/서류는 공통이면 재사용 가능)
-  // ---------------------------
   r_AplusB: {
-    type: "r",
-    resultType: "A + B 유형",
-    submissions: [
-    {
-      title: "1차 제출",
-      due: "12월 31일까지",
-      docs: "전직장근로소득 원천징수영수증, 중소기업 청년 소득세 감면명세서(홈택스) 및 신청서(첨부파일)"
-    },
-    {
-      title: "2차 제출",
-      due: "1월 20일 ~ 1월 27일",
-      docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
-    }
-  ]},
+    type:"r",
+    resultType:"A + B 유형",
+    submissions:[
+      { title:"1차 제출", due:"12월 31일까지", docs:"전직장근로소득 원천징수영수증, 중소기업 청년 소득세 감면명세서(홈택스) 및 신청서(첨부파일)" },
+      { title:"2차 제출", due:"1월 20일 ~ 1월 27일", docs:"구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류" }
+    ]
+  },
+
   r_A: {
-    type: "r",
-    resultType: "A 유형",
-   submissions: [
-    {
-      title: "1차 제출",
-      due: "12월 31일까지",
-      docs: "전직장근로소득 원천징수영수증"
-    },
-    {
-      title: "2차 제출",
-      due: "1월 20일 ~ 1월 27일",
-      docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
-    }
-  ]},
+    type:"r",
+    resultType:"A 유형",
+    submissions:[
+      { title:"1차 제출", due:"12월 31일까지", docs:"전직장근로소득 원천징수영수증" },
+      { title:"2차 제출", due:"1월 20일 ~ 1월 27일", docs:"구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류" }
+    ]
+  },
+
   r_B: {
-    type: "r",
-    resultType: "B 유형",
-    submissions: [
-    {
-      title: "1차 제출",
-      due: "12월 31일까지",
-      docs: "중소기업 청년 소득세 감면 신청서(첨부파일)"
-    },
-    {
-      title: "2차 제출",
-      due: "1월 20일 ~ 1월 27일",
-      docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
-    }
-  ]},
+    type:"r",
+    resultType:"B 유형",
+    submissions:[
+      { title:"1차 제출", due:"12월 31일까지", docs:"중소기업 청년 소득세 감면 신청서(첨부파일)" },
+      { title:"2차 제출", due:"1월 20일 ~ 1월 27일", docs:"구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류" }
+    ]
+  },
+
   r_AplusB2: {
-    type: "r",
-    resultType: "A + B 유형",
-    submissions: [
-    {
-      title: "1차 제출",
-      due: "12월 31일까지",
-      docs: "전직장근로소득 원천징수영수증, 중소기업 청년 소득세 감면신청서(첨부파일)"
-    },
-    {
-      title: "2차 제출",
-      due: "1월 20일 ~ 1월 27일",
-      docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
-    }
-  ]},
+    type:"r",
+    resultType:"A + B 유형",
+    submissions:[
+      { title:"1차 제출", due:"12월 31일까지", docs:"전직장근로소득 원천징수영수증, 중소기업 청년 소득세 감면신청서(첨부파일)" },
+      { title:"2차 제출", due:"1월 20일 ~ 1월 27일", docs:"구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류" }
+    ]
+  },
+
   r_C: {
-  type: "r",
-  resultType: "C 유형",
-  submissions: [
-    {
-      title: "제출",
-      due: "1월 20일 ~ 1월 27일",
-      docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
-    }
-  ]
-},
+    type:"r",
+    resultType:"C 유형",
+    submissions:[
+      { title:"제출", due:"1월 20일 ~ 1월 27일", docs:"구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류" }
+    ]
+  }
 };
 
 // ---------------------------
-// 엔진 (건드릴 필요 X)
+// 엔진
 // ---------------------------
 let currentId = "q1";
-let history = []; // {id, answer:'yes'|'no'}
+let history = [];
 
 const card = document.getElementById("card");
 const btnBack = document.getElementById("btnBack");
 const btnRestart = document.getElementById("btnRestart");
 
+function escapeHtml(str){
+  return String(str)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
 function render() {
   const node = tree[currentId];
   if (!node) {
-    card.innerHTML = `<div class="q">오류</div><div class="sub">존재하지 않는 노드: ${currentId}</div>`;
+    card.innerHTML = `<div class="q">오류</div><div class="sub">존재하지 않는 노드: ${escapeHtml(currentId)}</div>`;
     return;
   }
 
-  // crumbs
   const crumbsHtml = history.length
     ? `<div class="crumbs">
          <div style="margin-bottom:6px; font-weight:800; color:#6b7280">진행 기록</div>
@@ -405,44 +341,44 @@ function render() {
     `;
     document.getElementById("btnYes").onclick = () => go("yes");
     document.getElementById("btnNo").onclick  = () => go("no");
- } else {
-  const steps = Array.isArray(node.submissions) ? node.submissions : [];
+  } else {
+    const steps = Array.isArray(node.submissions) ? node.submissions : [];
 
-  card.innerHTML = `
-    <div class="sub">최종 결과</div>
-    <div class="resultType"><span class="dot"></span>${escapeHtml(node.resultType)}</div>
+    const mailOnceHtml = `
+      <div class="mailBox once">
+        📩 <b>피플 3셀 메일주소</b> :
+        <a href="mailto:payroll@thesmc.co.kr">payroll@thesmc.co.kr</a><br/>
+        💌 <b>메일 제목</b> :
+        <span class="subject">[연말정산] _____________________</span>
+      </div>
+    `;
 
-    <div class="kv">
-      ${
-        steps.length
-          ? steps.map(step => `
-              <div class="item">
-                <div class="k">${escapeHtml(step.title)}</div>
-                <div class="v">
-                  제출일 : ${escapeHtml(step.due)}
-                  <br/>
-                  제출서류 : ${escapeHtml(step.docs)}
-                </div>
-              </div>
-            `).join("")
-          : `
-              <div class="item">
-                <div class="k">안내</div>
-                <div class="v">제출 정보가 등록되지 않았어요.</div>
-              </div>
-            `
-      }
-    </div>
+    card.innerHTML = `
+      <div class="sub">최종 결과</div>
+      <div class="resultType"><span class="dot"></span>${escapeHtml(node.resultType)}</div>
 
-    <div class="btns">
-      <button class="ghost" id="btnAgain">다시 하기</button>
-    </div>
-    ${crumbsHtml}
-  `;
+      <div class="kv">
+        ${steps.map(step => `
+          <div class="item">
+            <div class="k">${escapeHtml(step.title)}</div>
+            <div class="v">
+              <b>제출일</b> : ${escapeHtml(step.due)}<br/>
+              <b>제출서류</b> : ${escapeHtml(step.docs)}
+            </div>
+          </div>
+        `).join("")}
+      </div>
 
-  document.getElementById("btnAgain").onclick = restart;
-}
+      ${mailOnceHtml}
 
+      <div class="btns">
+        <button class="ghost" id="btnAgain">다시 하기</button>
+      </div>
+      ${crumbsHtml}
+    `;
+
+    document.getElementById("btnAgain").onclick = restart;
+  }
 
   btnBack.disabled = history.length === 0;
 }
@@ -456,7 +392,7 @@ function go(answer) {
 }
 
 function back() {
-  if (history.length === 0) return;
+  if (!history.length) return;
   const last = history.pop();
   currentId = last.id;
   render();
@@ -466,16 +402,6 @@ function restart() {
   currentId = "q1";
   history = [];
   render();
-}
-
-
-function escapeHtml(str){
-  return String(str)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
 }
 
 btnBack.onclick = back;
