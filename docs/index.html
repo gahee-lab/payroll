@@ -7,9 +7,9 @@
   :root{
     --bg:#ffffff;
     --text:#111111;
-    --muted:#6b7280;      /* gray-500 느낌 */
+    --muted:#6b7280; 
     --card:#ffffff;
-    --border:#e5e7eb;     /* gray-200 */
+    --border:#e5e7eb;
     --shadow: 0 10px 30px rgba(0,0,0,.08);
 
     --btn:#111111;
@@ -19,7 +19,7 @@
     --btnGhostBg:#ffffff;
     --btnGhostText:#111111;
 
-    --chipBg:#f3f4f6;     /* gray-100 */
+    --chipBg:#f3f4f6;
   }
 
   *{box-sizing:border-box}
@@ -105,14 +105,14 @@
   }
   button:active{transform: scale(.98)}
 
-  /* ✅ 예/복사 = 블랙 */
+  /* 예 = 블랙 */
   .yes{
     background: var(--btn);
     color: var(--btnText);
   }
   .yes:hover{background: var(--btnHover);}
 
-  /* ✅ 아니오 = 화이트(테두리) */
+  /* 아니오 = 화이트 */
   .no{
     background: var(--btnGhostBg);
     color: var(--btnGhostText);
@@ -120,7 +120,7 @@
   }
   .no:hover{background:#fafafa}
 
-  /* ✅ 상단 이전/처음으로, 다시하기 = 고스트 */
+  /* 상단 이전/처음으로, 다시하기 = 고스트 */
   .ghost{
     background: var(--btnGhostBg);
     color: var(--btnGhostText);
@@ -158,7 +158,7 @@
     margin:2px 0 10px;
   }
 
-  /* 포인트 점은 블랙으로 미니멀 */
+  /* 포인트 점 블랙*/
   .dot{
     width:10px; height:10px;
     border-radius:50%;
@@ -212,7 +212,7 @@
     <div class="top">
       <div class="title">
         <span class="badge">YES / NO</span>
-        유형 CHECK LIST
+        연말정산 유형 CHECK LIST
       </div>
       <div class="row">
         <button class="ghost" id="btnBack">← 이전</button>
@@ -226,7 +226,6 @@
 
 <script>
 /**
- * ✅ 제원: 여기만 수정하면 알고리즘이 바뀜!
  * - type: "q" 질문 노드
  * - type: "r" 결과 노드
  * - yes/no: 다음 노드 id
@@ -305,7 +304,7 @@ const tree = {
       due: "1월 20일 ~ 1월 27일",
       docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
     }
-  ]}
+  ]},
   r_A: {
     type: "r",
     resultType: "A 유형",
@@ -335,7 +334,7 @@ const tree = {
       due: "1월 20일 ~ 1월 27일",
       docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
     }
-  ]}
+  ]},
   r_B_mid: {
     type: "r",
     resultType: "B 유형",
@@ -350,7 +349,7 @@ const tree = {
       due: "1월 20일 ~ 1월 27일",
       docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
     }
-  ]}
+  ]},
   r_B_historyYes: {
     type: "r",
     resultType: "B 유형",
@@ -365,7 +364,7 @@ const tree = {
       due: "1월 20일 ~ 1월 27일",
       docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
     }
-  ]}
+  ]},
   r_C_directNo: {
     type: "r",
     resultType: "C 유형",
