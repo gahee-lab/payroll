@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -185,7 +186,7 @@
   .v{
     margin-top:2px;
     font-size:14px;
-    line-height:0.8;
+    line-height:1.0;
     white-space:pre-wrap;
     color:#111;
     font-weight:700;
@@ -259,7 +260,7 @@ const tree = {
   q4_applyNow_afterPrevNo: {
     type: "q",
     text: "중소기업 청년 소득세 감면을 신청하실 건가요?",
-    yes: "r_AplusB_2",
+    yes: "r_AplusB2",
     no:  "r_A"
   },
 
@@ -267,8 +268,8 @@ const tree = {
   q3_applyNow_mid: {
     type: "q",
     text: "중소기업 청년 소득세 감면을 신청하실 건가요?",
-    yes: "r_A_mid",
-    no:  "r_B_mid"
+    yes: "r_B",
+    no:  "r_A"
   },
 
   // (중도입사자 아님) Q2
@@ -276,15 +277,15 @@ const tree = {
     type: "q",
     text: "중소기업 청년 소득세 감면을 신청하실 건가요?",
     yes: "q5_hasHistory",
-    no:  "r_C_directNo"
+    no:  "r_C"
   },
 
   // (신청한다) Q3
   q5_hasHistory: {
     type: "q",
     text: "이전에 신청한 이력이 있나요?",
-    yes: "r_B_historyYes",
-    no:  "r_C_historyNo"
+    yes: "r_C",
+    no:  "r_B"
   },
 
   // ---------------------------
@@ -320,29 +321,14 @@ const tree = {
       docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
     }
   ]},
-  r_A_mid: {
-    type: "r",
-    resultType: "A 유형",
-    submissions: [
-    {
-      title: "1차 제출",
-      due: "12월 31일까지",
-      docs: "전직장근로소득 원천징수영수증"
-    },
-    {
-      title: "2차 제출",
-      due: "1월 20일 ~ 1월 27일",
-      docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
-    }
-  ]},
-  r_B_mid: {
+  r_B: {
     type: "r",
     resultType: "B 유형",
     submissions: [
     {
       title: "1차 제출",
       due: "12월 31일까지",
-      docs: "중소기업 청년 소득세 감면명세서(홈택스) 및 신청서(첨부파일)"
+      docs: "중소기업 청년 소득세 감면 신청서(첨부파일)"
     },
     {
       title: "2차 제출",
@@ -350,14 +336,14 @@ const tree = {
       docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
     }
   ]},
-  r_B_historyYes: {
+  r_AplusB2: {
     type: "r",
-    resultType: "B 유형",
+    resultType: "A + B 유형",
     submissions: [
     {
       title: "1차 제출",
       due: "12월 31일까지",
-      docs: "중소기업 청년 소득세 감면명세서(홈택스) 및 신청서(첨부파일)"
+      docs: "전직장근로소득 원천징수영수증, 중소기업 청년 소득세 감면신청서(첨부파일)"
     },
     {
       title: "2차 제출",
@@ -365,7 +351,7 @@ const tree = {
       docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
     }
   ]},
-  r_C_directNo: {
+  r_C: {
   type: "r",
   resultType: "C 유형",
   submissions: [
@@ -376,17 +362,6 @@ const tree = {
     }
   ]
 },
-r_C_historyNo: {
-  type: "r",
-  resultType: "C 유형",
-  submissions: [
-    {
-      title: "제출",
-      due: "1월 20일 ~ 1월 27일",
-      docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
-    }
-  ]
-}
 };
 
 // ---------------------------
@@ -409,7 +384,7 @@ function render() {
   // crumbs
   const crumbsHtml = history.length
     ? `<div class="crumbs">
-         <div style="margin-bottom:6px; font-weight:800; color:rgba(255,255,255,.75)">진행 기록</div>
+         <div style="margin-bottom:6px; font-weight:800; color:#6b7280">진행 기록</div>
          ${history.map(h => {
             const q = tree[h.id]?.text ?? h.id;
             const a = h.answer === "yes" ? "예" : "아니오";
