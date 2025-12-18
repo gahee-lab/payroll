@@ -171,24 +171,24 @@
     gap:10px
   }
   .kv .item{
-    padding:12px 12px;
-    border-radius:12px;
+    padding:8px 10px;
+    border-radius:10px;
     background:#fafafa;
     border:1px solid var(--border);
   }
 
   .k{
-    color: var(--muted);
-    font-size:12px;
+    color: #111111;
+    font-size:14px;
     font-weight:900
   }
   .v{
-    margin-top:4px;
+    margin-top:2px;
     font-size:14px;
-    line-height:1.6;
+    line-height:0.8;
     white-space:pre-wrap;
     color:#111;
-    font-weight:800;
+    font-weight:700;
   }
 
   .footerRow{
@@ -366,17 +366,27 @@ const tree = {
     }
   ]},
   r_C_directNo: {
-    type: "r",
-    resultType: "C 유형",
-    due: "제출일 : 1월 20일 ~ 1월 27일",
-    docs: "제출서류 : 구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
-  },
-  r_C_historyNo: {
-    type: "r",
-    resultType: "C 유형",
-    due: "제출일 : 1월 20일 ~ 1월 27일",
-    docs: "제출서류 : 구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
-  }
+  type: "r",
+  resultType: "C 유형",
+  submissions: [
+    {
+      title: "제출",
+      due: "1월 20일 ~ 1월 27일",
+      docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
+    }
+  ]
+},
+r_C_historyNo: {
+  type: "r",
+  resultType: "C 유형",
+  submissions: [
+    {
+      title: "제출",
+      due: "1월 20일 ~ 1월 27일",
+      docs: "구글폼, 홈텍스(연말정산 자료), 등본 및 기타 해당되는 서류"
+    }
+  ]
+}
 };
 
 // ---------------------------
@@ -420,28 +430,44 @@ function render() {
     `;
     document.getElementById("btnYes").onclick = () => go("yes");
     document.getElementById("btnNo").onclick  = () => go("no");
-  } else {
-    card.innerHTML = `
-      <div class="sub">최종 결과</div>
-      <div class="resultType"><span class="dot"></span>${escapeHtml(node.resultType)}</div>
-      <div class="kv">
-        <div class="item">
-          <div class="k">제출일</div>
-          <div class="v">${escapeHtml(node.due)}</div>
-        </div>
-        <div class="item">
-          <div class="k">제출서류</div>
-          <div class="v">${escapeHtml(node.docs)}</div>
-        </div>
-      </div>
-      <div class="btns">
-        <button class="ghost" id="btnAgain">다시 하기</button>
-      </div>
-      ${crumbsHtml}
-    `;
-    document.getElementById("btnAgain").onclick = restart;
-    document.getElementById("btnCopy").onclick = () => copyResult(node);
-  }
+ } else {
+  const steps = Array.isArray(node.submissions) ? node.submissions : [];
+
+  card.innerHTML = `
+    <div class="sub">최종 결과</div>
+    <div class="resultType"><span class="dot"></span>${escapeHtml(node.resultType)}</div>
+
+    <div class="kv">
+      ${
+        steps.length
+          ? steps.map(step => `
+              <div class="item">
+                <div class="k">${escapeHtml(step.title)}</div>
+                <div class="v">
+                  제출일 : ${escapeHtml(step.due)}
+                  <br/>
+                  제출서류 : ${escapeHtml(step.docs)}
+                </div>
+              </div>
+            `).join("")
+          : `
+              <div class="item">
+                <div class="k">안내</div>
+                <div class="v">제출 정보가 등록되지 않았어요.</div>
+              </div>
+            `
+      }
+    </div>
+
+    <div class="btns">
+      <button class="ghost" id="btnAgain">다시 하기</button>
+    </div>
+    ${crumbsHtml}
+  `;
+
+  document.getElementById("btnAgain").onclick = restart;
+}
+
 
   btnBack.disabled = history.length === 0;
 }
